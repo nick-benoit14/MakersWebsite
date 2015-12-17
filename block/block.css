@@ -1,0 +1,41 @@
+.cachemakers-block, .container, .image-box, .info {
+  font-family: 'Raleway', sans-serif; }
+
+.container {
+  display: inline-block;
+  text-align: center;
+  /*height:$block-height;*/
+  width: 300px;
+  margin: 10px;
+  background-color: #DDDDDD;
+  position: relative;
+  color: #222222; }
+  .container:hover .image-box img {
+    opacity: 0; }
+
+.image-box {
+  height: 150px;
+  width: 300px;
+  position: relative;
+  overflow: hidden; }
+  .image-box img {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%; }
+
+.info {
+  font-size: 75%; }
+  .info h2 {
+    padding: 5px;
+    margin: 5px; }
+  .info .dateTime {
+    font-size: 125%; }
+
+/*# sourceMappingURL=block.css.map */

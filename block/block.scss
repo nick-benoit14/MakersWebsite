@@ -1,0 +1,51 @@
+
+$primary-color: #DDDDDD;
+$font-color:#222222;
+
+$block-height:375px;
+$block-width:300px;
+
+@mixin photo-fade($duration){
+  -webkit-transition: opacity $duration ease-in-out;
+     -moz-transition: opacity $duration ease-in-out;
+      -ms-transition: opacity $duration ease-in-out;
+          transition: opacity $duration ease-in-out;
+}
+
+
+.cachemakers-block{
+  font-family: 'Raleway', sans-serif;
+}
+
+  .container{
+    @extend .cachemakers-block;
+
+    display:inline-block; text-align:center; /*height:$block-height;*/
+    width:$block-width; margin:10px; background-color:$primary-color;
+    position:relative; color:$font-color;
+
+    &:hover{
+        .image-box img{opacity:0;}
+      }
+  }
+
+  .image-box{
+    @extend .cachemakers-block;
+    height:150px; width:300px; position:relative; overflow:hidden;
+
+    img{
+      @include photo-fade(.2s);
+      position:absolute; z-index:2; left:0px;
+      top:0px; height:100%; width:100%;
+
+      }
+  }
+
+  .info{
+    @extend .cachemakers-block;
+    font-size:75%;
+      h2{padding:5px; margin:5px;}
+      p{}
+      a{}
+      .dateTime{font-size:125%}
+  }
