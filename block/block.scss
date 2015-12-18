@@ -37,8 +37,9 @@ $block-width:300px;
       @include photo-fade(.2s);
       position:absolute; z-index:2; left:0px;
       top:0px; height:100%; width:100%;
-
-      }
+    }
+    h4{}  
+    p{font-size:80%; padding:10px;}
   }
 
   .info{

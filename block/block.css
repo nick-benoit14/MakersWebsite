@@ -29,6 +29,11 @@
     top: 0px;
     height: 100%;
     width: 100%; }
+  .image-box h4 {
+    text-align: left; }
+  .image-box p {
+    font-size: 80%;
+    padding: 10px; }
 
 .info {
   font-size: 75%; }
