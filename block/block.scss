@@ -2,16 +2,36 @@
 $primary-color: #DDDDDD;
 $font-color:#222222;
 
+$secondary-color: #848383;
+$secondary-font-color:#efefef;
+
+$active-color:#ffffff;
+
 $block-height:375px;
 $block-width:300px;
 
+/*
 @mixin photo-fade($duration){
-  -webkit-transition: opacity $duration ease-in-out;
-     -moz-transition: opacity $duration ease-in-out;
-      -ms-transition: opacity $duration ease-in-out;
-          transition: opacity $duration ease-in-out;
+  -webkit-transition: all $duration ease-in-out;
+     -moz-transition: all $duration ease-in-out;
+      -ms-transition: all $duration ease-in-out;
+          transition: all $duration ease-in-out;
+}
+*/
+
+@mixin photo-fade($duration){
+  -webkit-transition: visibility 0s linear .25s, opacity $duration ease-in-out;
+     -moz-transition: visibility 0s linear .25s, opacity $duration ease-in-out;
+      -ms-transition: visibility 0s linear .25s, opacity $duration ease-in-out;
+          transition: visibility 0s linear .25s, opacity $duration ease-in-out;
 }
 
+@mixin fade-back(){
+  -webkit-transition-delay: 0s;
+     -moz-transition-delay: 0s;
+      -ms-transition-delay: 0s;
+          transition-delay: 0s;
+}
 
 .cachemakers-block{
   font-family: 'Raleway', sans-serif;
@@ -23,10 +43,11 @@ $block-width:300px;
     display:inline-block; text-align:center; /*height:$block-height;*/
     width:$block-width; margin:10px; background-color:$primary-color;
     position:relative; color:$font-color;
-
-    &:hover{
-        .image-box img{opacity:0;}
+    box-shadow: 4px 4px 2px grey;
+    &:hover{.image-box img{
+      opacity:0; visibility:hidden;
       }
+    }
   }
 
   .image-box{
@@ -36,11 +57,26 @@ $block-width:300px;
     img{
       @include photo-fade(.2s);
       position:absolute; z-index:2; left:0px;
-      top:0px; height:100%; width:100%;
+      top:0px; height:100%; width:100%; visibility:visible;
     }
-    h4{}  
+
     p{font-size:80%; padding:10px;}
+
+    .signup-box{
+      width:100%; height:33%; overflow:hidden;
+
+      h4{position:absolute; left:0%; margin:5%; font-size:110%;}
+      button{
+        position:absolute; right:0%; margin:5%;
+        font-size:125%; background-color:$secondary-color;
+        color:$secondary-font-color;
+
+        &:hover{opacity:0;}
+      }
+    }
   }
+
+
 
   .info{
     @extend .cachemakers-block;

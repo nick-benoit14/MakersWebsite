@@ -1,3 +1,11 @@
+/*
+@mixin photo-fade($duration){
+  -webkit-transition: all $duration ease-in-out;
+     -moz-transition: all $duration ease-in-out;
+      -ms-transition: all $duration ease-in-out;
+          transition: all $duration ease-in-out;
+}
+*/
 .cachemakers-block, .container, .image-box, .info {
   font-family: 'Raleway', sans-serif; }
 
@@ -9,9 +17,11 @@
   margin: 10px;
   background-color: #DDDDDD;
   position: relative;
-  color: #222222; }
+  color: #222222;
+  box-shadow: 4px 4px 2px grey; }
   .container:hover .image-box img {
-    opacity: 0; }
+    opacity: 0;
+    visibility: hidden; }
 
 .image-box {
   height: 150px;
@@ -19,21 +29,38 @@
   position: relative;
   overflow: hidden; }
   .image-box img {
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    -ms-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
+    -webkit-transition: visibility 0s linear 0.25s, opacity 0.2s ease-in-out;
+    -moz-transition: visibility 0s linear 0.25s, opacity 0.2s ease-in-out;
+    -ms-transition: visibility 0s linear 0.25s, opacity 0.2s ease-in-out;
+    transition: visibility 0s linear 0.25s, opacity 0.2s ease-in-out;
     position: absolute;
     z-index: 2;
     left: 0px;
     top: 0px;
     height: 100%;
-    width: 100%; }
-  .image-box h4 {
-    text-align: left; }
+    width: 100%;
+    visibility: visible; }
   .image-box p {
     font-size: 80%;
     padding: 10px; }
+  .image-box .signup-box {
+    width: 100%;
+    height: 33%;
+    overflow: hidden; }
+    .image-box .signup-box h4 {
+      position: absolute;
+      left: 0%;
+      margin: 5%;
+      font-size: 110%; }
+    .image-box .signup-box button {
+      position: absolute;
+      right: 0%;
+      margin: 5%;
+      font-size: 125%;
+      background-color: #848383;
+      color: #efefef; }
+      .image-box .signup-box button:hover {
+        opacity: 0; }
 
 .info {
   font-size: 75%; }
