@@ -20,17 +20,23 @@ $block-width:300px;
 */
 
 @mixin photo-fade($duration){
-  -webkit-transition: visibility 0s linear .25s, opacity $duration ease-in-out;
-     -moz-transition: visibility 0s linear .25s, opacity $duration ease-in-out;
-      -ms-transition: visibility 0s linear .25s, opacity $duration ease-in-out;
-          transition: visibility 0s linear .25s, opacity $duration ease-in-out;
+  -webkit-transition: visibility 0s $duration, opacity $duration;
+     -moz-transition: visibility 0s $duration, opacity $duration;
+      -ms-transition: visibility 0s $duration, opacity $duration;
+          transition: visibility 0s $duration, opacity $duration;
 }
 
 @mixin fade-back(){
-  -webkit-transition-delay: 0s;
-     -moz-transition-delay: 0s;
-      -ms-transition-delay: 0s;
-          transition-delay: 0s;
+  /*-webkit-transition: visibility 0s 0s;
+     -moz-transition: visibility 0s 0s;
+      -ms-transition: visibility 0s 0s;
+          transition: visibility 0s 0s;
+*/
+
+
+  -webkit-transition-delay:0s;
+  transition-delay:0s;
+
 }
 
 .cachemakers-block{
@@ -43,21 +49,28 @@ $block-width:300px;
     display:inline-block; text-align:center; /*height:$block-height;*/
     width:$block-width; margin:10px; background-color:$primary-color;
     position:relative; color:$font-color;
-    box-shadow: 4px 4px 2px grey;
-    &:hover{.image-box img{
-      opacity:0; visibility:hidden;
-      }
-    }
+    box-shadow: 4px 4px 2px gray;
+    .image-box img{
+      visibility:visible; opacity:1;
+      transition-delay: all 0s;
+     }
+
+    &:hover{
+      .image-box
+              img{
+                  opacity:0; visibility:hidden;
+              }
+            }
   }
 
   .image-box{
     @extend .cachemakers-block;
-    height:150px; width:300px; position:relative; overflow:hidden;
+    height:150px; width:100%; position:relative; overflow:hidden;
 
     img{
       @include photo-fade(.2s);
-      position:absolute; z-index:2; left:0px;
-      top:0px; height:100%; width:100%; visibility:visible;
+      position:absolute; left:0px;
+      top:0px; height:100%; width:100%;
     }
 
     p{font-size:80%; padding:10px;}

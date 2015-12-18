@@ -18,28 +18,31 @@
   background-color: #DDDDDD;
   position: relative;
   color: #222222;
-  box-shadow: 4px 4px 2px grey; }
-  .container:hover .image-box img {
+  box-shadow: 4px 4px 2px gray; }
+  .container .image-box img {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: all 0s; }
+  .container:hover .image-box
+  img {
     opacity: 0;
     visibility: hidden; }
 
 .image-box {
   height: 150px;
-  width: 300px;
+  width: 100%;
   position: relative;
   overflow: hidden; }
   .image-box img {
-    -webkit-transition: visibility 0s linear 0.25s, opacity 0.2s ease-in-out;
-    -moz-transition: visibility 0s linear 0.25s, opacity 0.2s ease-in-out;
-    -ms-transition: visibility 0s linear 0.25s, opacity 0.2s ease-in-out;
-    transition: visibility 0s linear 0.25s, opacity 0.2s ease-in-out;
+    -webkit-transition: visibility 0s 0.2s, opacity 0.2s;
+    -moz-transition: visibility 0s 0.2s, opacity 0.2s;
+    -ms-transition: visibility 0s 0.2s, opacity 0.2s;
+    transition: visibility 0s 0.2s, opacity 0.2s;
     position: absolute;
-    z-index: 2;
     left: 0px;
     top: 0px;
     height: 100%;
-    width: 100%;
-    visibility: visible; }
+    width: 100%; }
   .image-box p {
     font-size: 80%;
     padding: 10px; }
