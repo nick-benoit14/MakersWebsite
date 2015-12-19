@@ -1,11 +1,3 @@
-/*
-@mixin photo-fade($duration){
-  -webkit-transition: all $duration ease-in-out;
-     -moz-transition: all $duration ease-in-out;
-      -ms-transition: all $duration ease-in-out;
-          transition: all $duration ease-in-out;
-}
-*/
 .cachemakers-block, .container, .image-box, .info {
   font-family: 'Raleway', sans-serif; }
 
@@ -64,9 +56,15 @@
       margin: 5%;
       font-size: 125%;
       background-color: #848383;
-      color: #efefef; }
+      color: #efefef;
+      /*Add Button Fade*/ }
       .image-box .signup-box button:hover {
-        opacity: 0; }
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        background-color: #ffffff;
+        color: #000000; }
 
 .info {
   font-size: 75%; }
@@ -75,5 +73,7 @@
     margin: 5px; }
   .info .dateTime {
     font-size: 125%; }
+  .info .tags {
+    font-size: 50%; }
 
 /*# sourceMappingURL=block.css.map */

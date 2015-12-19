@@ -6,6 +6,7 @@ $secondary-color: #848383;
 $secondary-font-color:#efefef;
 
 $active-color:#ffffff;
+$active-text:#000000;
 
 $block-height:375px;
 $block-width:300px;
@@ -22,6 +23,13 @@ $block-width:300px;
      -moz-transition: visibility 0s 0s, opacity $duration;
       -ms-transition: visibility 0s 0s, opacity $duration;
           transition: visibility 0s 0s, opacity $duration;
+}
+
+@mixin button-fade($duration){
+  -webkit-transition: all $duration ease-in-out;
+     -moz-transition: all $duration ease-in-out;
+      -ms-transition: all $duration ease-in-out;
+          transition: all $duration ease-in-out;
 }
 
 
@@ -67,7 +75,10 @@ $block-width:300px;
         font-size:125%; background-color:$secondary-color;
         color:$secondary-font-color;
 
-        &:hover{opacity:0;} /*Add Button Fade*/
+        &:hover{
+          @include button-fade(.2s);
+          background-color:$active-color; color:$active-text;
+        } /*Add Button Fade*/
       }
     }
   }
